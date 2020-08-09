@@ -3,8 +3,6 @@ import youtube from "../api/youtube";
 
 import SearchBar from "./SearchBar";
 
-const KEY = "AIzaSyCnI_hTMU5AFSN47ON0Z8yV9dIapRFVdVo";
-
 class App extends React.Component {
   onSearch = async query => {
     const res = await youtube.get(`/search`, {
