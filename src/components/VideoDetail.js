@@ -1,9 +1,22 @@
-import React, { PropTypes } from "react";
+import React from "react";
 
-export default class VideoDetail extends React.Component {
-  render() {
-    return <div>MyComponent</div>;
+const VideoDetail = ({ video }) => {
+  if (!video) {
+    return <div>Loading...</div>;
   }
-}
+  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
 
-VideoDetail.propTypes = {};
+  return (
+    <div>
+      <div className="ui embed">
+        <iframe src={videoSrc} title={`${video.snippet.title}`} />
+      </div>
+      <div className="ui segment">
+        <h4 className="ui header">{video.snippet.title}</h4>
+        <p className="ui description">{video.snippet.description}</p>
+      </div>
+    </div>
+  );
+};
+
+export default VideoDetail;
