@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// New key needs to be generated
 const KEY = process.env.MY_KEY;
 
 export default axios.create({
