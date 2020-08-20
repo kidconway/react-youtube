@@ -5,6 +5,8 @@ import SearchBar from "./SearchBar";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
 
+console.log(process.env.REACT_APP_API_KEY);
+
 class App extends React.Component {
   state = { videos: [], selectedVideo: null };
 
